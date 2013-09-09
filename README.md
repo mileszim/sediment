@@ -136,6 +136,8 @@ As you can see, it's a pretty clear difference. Not perfect, but then again, it'
 ### Initialize word list vs Lazy Loading
 Sediment lazy-loads the word list from afinn-111.json by default, using a synchronous operation. If you want to avoid initializing the file on the first call to ```Sediment.analyze()```, you can instead force initialization by calling
 
-```Sediment.initialize()```
+``` 
+Sediment.initialize();
+```
 
 This is useful if you are using a framework, for example, and want to load the list during boot.
