@@ -1,7 +1,7 @@
 {
   "name": "sediment",
   "description": "Javascript sentiment analysis using AFINN-111",
-  "main": "dist/sediment.min.js",
+  "main": "dist/sediment.js",
   "authors": [
     "Miles Zimmerman"
   ],
