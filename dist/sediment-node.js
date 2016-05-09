@@ -1,4 +1,34 @@
-{
+'use strict';
+
+var babelHelpers = {};
+
+babelHelpers.classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+babelHelpers.createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+babelHelpers;
+
+var WORDS = {
     "abandon": -2,
     "abandoned": -2,
     "abandons": -2,
@@ -2476,4 +2506,91 @@
     "zealot": -2,
     "zealots": -2,
     "zealous": 2
-}
+};
+
+var SPLIT_CHAR = ' ';
+
+var Sediment = function () {
+  function Sediment() {
+    babelHelpers.classCallCheck(this, Sediment);
+  }
+
+  babelHelpers.createClass(Sediment, null, [{
+    key: 'clean',
+
+    /**
+     * Strips text of anything but letters, and converts to lower case, and breaks it into array
+     * Borrowed with love from https://github.com/thisandagain/sentiment/blob/develop/lib/tokenize.js
+     *
+     * @param  {string} text Text to process/normalize
+     * @return {string} Processed text
+     */
+    value: function clean(text) {
+      return text.toLowerCase().replace(/[^a-z0-9á-úñäâàéèëêïîöôùüûœç\- ]+/g, '').replace('/ {2,}/', ' ').split(SPLIT_CHAR);
+    }
+
+    /**
+     * Analyze text and return a sentiment object
+     *
+     * @param  {string} text The text to parse
+     * @return {object} Analysis of the text
+     */
+
+  }, {
+    key: 'analyze',
+    value: function analyze(text) {
+      var array = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+      var score = 0;
+      var comparative = 0;
+      var positive = {};
+      var negative = {};
+      var neutral = {};
+      var matched = {};
+      var unmatched = {};
+
+      var cleaned_text = this.clean(text);
+
+      var current = cleaned_text.length;
+      while (current--) {
+        var word = cleaned_text[current];
+
+        if (!WORDS.hasOwnProperty(word)) {
+          !!unmatched[word] && unmatched[word]++ || (unmatched[word] = 1);
+          continue;
+        } else {
+          var word_score = WORDS[word];
+          !!matched[word] && matched[word]++ || (matched[word] = 1);
+          score += word_score;
+          if (word_score === 0) {
+            neutral[word] = true;
+          } else if (word_score > 0) {
+            positive[word] = true;
+          } else
+            /* if (word_score  <  0)*/{
+              negative[word] = true;
+            }
+        }
+      }
+
+      var matched_length = Object.keys(matched).length;
+      if (matched_length > 0) {
+        comparative = score / matched_length;
+      }
+
+      return {
+        score: score,
+        comparative: comparative,
+        words: {
+          positive: Object.keys(positive),
+          negative: Object.keys(negative),
+          neutral: Object.keys(neutral),
+          matched: matched,
+          unmatched: unmatched
+        }
+      };
+    }
+  }]);
+  return Sediment;
+}();
+
+module.exports = Sediment;
