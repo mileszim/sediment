@@ -598,10 +598,6 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.3.4:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
-
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
@@ -1400,12 +1396,11 @@ grunt-legacy-util@~1.0.0:
     underscore.string "~3.2.3"
     which "~1.2.1"
 
-grunt-rollup@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-0.7.1.tgz#38bfa5443295e35f9d9be842154d68eb80840f0f"
+grunt-rollup@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-7.0.0.tgz#ab8304aa0285ae85b2831f8d8f40684ccca351f4"
   dependencies:
-    bluebird "^3.3.4"
-    rollup "^0.x"
+    rollup "0.51.3"
 
 grunt@^1.0.1:
   version "1.0.1"
@@ -2441,7 +2436,7 @@ rollup-pluginutils@^1.5.0:
     estree-walker "^0.2.1"
     minimatch "^3.0.2"
 
-rollup@^0.x:
+rollup@0.51.3:
   version "0.51.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.3.tgz#229e0004d6cf8f207f77a7a8dc76924155f4c1dd"
 
