@@ -28,7 +28,7 @@
     "grunt-babel": "^6.0.0",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-uglify": "^3.1.0",
-    "grunt-rollup": "^7.0.0",
+    "grunt-rollup": "^8.0.0",
     "rollup-plugin-babel": "^2.4.0"
   }
 }
