@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@types/estree@*":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.42.tgz#8d0c1f480339efedb3e46070e22dd63e0430dd11"
+
+"@types/node@*":
+  version "13.1.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.1.8.tgz#1d590429fe8187a02707720ecf38a6fe46ce294b"
+
 JSONStream@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-0.10.0.tgz#74349d0d89522b71f30f0a03ff9bd20ca6f12ac0"
@@ -23,6 +31,10 @@ abbrev@1:
 acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
+
+acorn@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.0.tgz#949d36f2c292535da602283586c2477c57eb2d6c"
 
 ajv@^4.9.1:
   version "4.11.8"
@@ -1396,11 +1408,11 @@ grunt-legacy-util@~1.0.0:
     underscore.string "~3.2.3"
     which "~1.2.1"
 
-grunt-rollup@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-7.0.0.tgz#ab8304aa0285ae85b2831f8d8f40684ccca351f4"
+grunt-rollup@^10.2.0:
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-10.2.0.tgz#33dccf4c97dccfbd450750fbd4587cfe7d9b7cdb"
   dependencies:
-    rollup "0.51.3"
+    rollup "^1.29.0"
 
 grunt@^1.0.1:
   version "1.0.1"
@@ -2436,9 +2448,13 @@ rollup-pluginutils@^1.5.0:
     estree-walker "^0.2.1"
     minimatch "^3.0.2"
 
-rollup@0.51.3:
-  version "0.51.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.3.tgz#229e0004d6cf8f207f77a7a8dc76924155f4c1dd"
+rollup@^1.29.0:
+  version "1.29.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.29.1.tgz#8715d0a4ca439be3079f8095989ec8aa60f637bc"
+  dependencies:
+    "@types/estree" "*"
+    "@types/node" "*"
+    acorn "^7.1.0"
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
