@@ -1226,6 +1226,10 @@ fsevents@^1.0.0:
     nan "^2.3.0"
     node-pre-gyp "^0.6.39"
 
+fsevents@~2.1.2:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.1.3.tgz#fb738703ae8d2f9fe900c33836ddebee8b97f23e"
+
 fstream-ignore@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/fstream-ignore/-/fstream-ignore-1.0.5.tgz#9c31dae34767018fe1d249b24dada67d092da105"
@@ -1396,11 +1400,11 @@ grunt-legacy-util@~1.0.0:
     underscore.string "~3.2.3"
     which "~1.2.1"
 
-grunt-rollup@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-7.0.0.tgz#ab8304aa0285ae85b2831f8d8f40684ccca351f4"
+grunt-rollup@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/grunt-rollup/-/grunt-rollup-11.2.0.tgz#238b708bc4fcd8955c2de9795cf1c362559b4f15"
   dependencies:
-    rollup "0.51.3"
+    rollup "^2.13.1"
 
 grunt@^1.0.1:
   version "1.0.1"
@@ -2436,9 +2440,11 @@ rollup-pluginutils@^1.5.0:
     estree-walker "^0.2.1"
     minimatch "^3.0.2"
 
-rollup@0.51.3:
-  version "0.51.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.3.tgz#229e0004d6cf8f207f77a7a8dc76924155f4c1dd"
+rollup@^2.13.1:
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.13.1.tgz#06ac5be4f85df0b79f23cdfa90de63e78095a984"
+  optionalDependencies:
+    fsevents "~2.1.2"
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
